@@ -5,8 +5,15 @@
 // $current = $voltage / $resistance;
 // print "Current: ";
 // print $current;
+// print " amps";
 
 // To calculate voltage:
+// $current = $_POST['current'];
+// $resistance = $_POST['resistance'];
+// $voltage = $current * $resistance;
+// print "Voltage: ";
+// print $voltage;
+// print " volts";
 
 // To calculate resistance:
 $voltage = $_POST['voltage'];
