@@ -1,25 +1,44 @@
 <?php
-// To calculate current:
-// $voltage = $_POST['voltage'];
-// $resistance = $_POST['resistance'];
-// $current = $voltage / $resistance;
-// print "Current: ";
-// print $current;
-// print " amps";
+if ($_POST['cResistance'] || $_POST['cVoltage']){
+  calculateCurrent();
+} else if ($_POST['vResistance'] || $_POST['vCurrent']) {
+  calculateVoltage();
+} else if ($_POST['rVoltage'] || $_POST['rCurrent']) {
+  calculateResistance();
+} else {
+  print "I didn't get any user input";
+}
 
-// To calculate voltage:
-// $current = $_POST['current'];
-// $resistance = $_POST['resistance'];
-// $voltage = $current * $resistance;
-// print "Voltage: ";
-// print $voltage;
-// print " volts";
+// Function for calculating current
+function calculateCurrent(){
+  $voltage = $_POST['cVoltage'];
+  $resistance = $_POST['cResistance'];
+  $current = $voltage / $resistance;
+  print "Current: ";
+  print $current;
+  print " amps";
+}
 
-// To calculate resistance:
-$voltage = $_POST['voltage'];
-$current = $_POST['current'];
-$resistance = $voltage / $current;
-print "Resistance: ";
-print $resistance;
-print " ohms"
+// Function for calculating voltage
+function calculateVoltage(){
+  $current = $_POST['vCurrent'];
+  $resistance = $_POST['vResistance'];
+  $voltage = $current * $resistance;
+  print "Voltage: ";
+  print $voltage;
+  print " volts";
+}
+
+// Function for calculating resistance
+function calculateResistance(){
+  $voltage = $_POST['rVoltage'];
+  $current = $_POST['rCurrent'];
+  $resistance = $voltage / $current;
+  print "Resistance: ";
+  print $resistance;
+  print " ohms";
+}
+
+
 ?>
+
